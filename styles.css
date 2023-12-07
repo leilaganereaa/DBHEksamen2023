@@ -1,0 +1,183 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+/*-----Under her er CSS til vores header------*/
+.headerbar{
+    width: 100%;
+    height: 75px;
+    background-color: #9C5238;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: space-between;
+}
+.venstrelink{
+    height: 50px;
+    width: 10%;
+    padding-top: 25px;
+    text-align: center;
+}
+.venstrelink a{
+    text-decoration: none;
+    color: #fff;
+}
+.logo{
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    z-index: 2;
+}
+
+/*-Herunder er stadig i header, men bare css til Burgermenu*/
+.hamburger{
+    display: block;
+    cursor: pointer;
+    appearance: none;
+    background: none;
+    outline: none;
+    border: none;
+    width: 50px;
+    height: 50px;
+    z-index: 99;
+    padding-top: 10px;
+    padding-right: 5%;
+}
+.hamburger .bar, .hamburger:after, .hamburger:before{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 5px;
+    margin: 6px 0px;
+    transition: 0.4s;
+    background-color: #fff;
+}
+.hamburger.is-active:before{
+    transform: rotate(-45deg) translate(-8px, 6px);
+}
+.hamburger.is-active:after{
+    transform: rotate(45deg) translate(-9px, -8px);
+}
+.hamburger.is-active .bar{
+    opacity: 0;
+}
+.mobile-nav{
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    min-height: 100vh;
+    z-index: 98;
+    background-color: #8E9F99;
+    padding-top: 120px;
+    transition: 0.4s;
+}
+.mobile-nav.is-active{
+    left: 0;
+
+}
+.mobile-nav a{
+    display: block;
+    margin: 0 auto 16px;
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+    margin-bottom: 16px;
+    padding: 12px 16px;
+    background-color: #dad1c6;
+    color: #000;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/*--------Herunder er der CSS til de høje forsider med billeder og tekst--------*/
+.forsidelang img{
+    width: 100%;
+    height: 850px;
+    opacity: 50%;
+}
+.forsidelang{
+    width: 100%;
+    height: 850px;
+    background-color: #000;
+}
+/*---Herunder brugte jeg følgende fra w3schools "How TO - Position Text Over an Image"*/
+.forsidetekst{
+    width: 40%;
+    height: 700px;
+    position: absolute;
+    top: 150px;
+    left: 16px;
+    padding-left: 3%;
+}
+.forsidetekst h1{
+    font-family: 'Cabin Sketch', sans-serif;
+    color: #fff;
+    font-size: 150px;
+    word-wrap: break-word;
+    font-weight: bold;
+}
+.forsidetekst h2{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    color: #fff;
+    font-weight: 500;
+    padding-bottom: 5%;
+}
+/*---Herunder er til selve knappen i toppen af vores sider---*/
+button {
+    display: inline-block;
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    border: 2px solid #8E9F99;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease-in;
+    background-color: transparent;
+    cursor: pointer;
+    z-index: 1;
+   }
+   
+   button::before,
+   button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 100%;
+    transform: skew(15deg);
+    transition: all 0.5s;
+    overflow: hidden;
+    z-index: -1;
+   }
+   
+   button::before {
+    left: -10px;
+    background: #8E9F99;
+   }
+   
+   button::after {
+    right: -10px;
+    background: #5c8073;
+   }
+   
+   button:hover::before,
+   button:hover::after {
+    width: 58%;
+   }
+   
+   button:hover span {
+    color: #fff;
+    transition: 0.3s;
+   }
+   
+   button span {
+    color: #fff;
+    font-size: 18px;
+    transition: all 0.3s ease-in;
+   }
